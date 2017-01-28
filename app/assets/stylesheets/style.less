@@ -1,0 +1,78 @@
+@h_color: blue;
+@gaps: 15px;
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: @h_color;
+}
+
+.row {
+  // display: flex;
+}
+
+.block {
+   display: -ms-flex;
+   display: -webkit-flex;
+   display: flex;
+}
+
+.text {
+  border: #bbb solid 1px ;
+}
+
+.img-responsive {
+  max-width: 100%;
+  display: block;
+}
+
+// macbook
+@media only screen
+  and (max-device-width: 2880px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .image {
+      width: 14%;
+      padding: 26px;
+    }
+    .text {
+      flex: 1;
+      margin: 26px;
+    }
+
+}
+
+// ipad
+@media only screen
+  and (max-device-width : 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .image {
+    width: 30%;
+    float: left;
+    padding: @gaps;
+  }
+  .text {
+    margin: @gaps;
+  }
+}
+
+// iphone
+@media only screen
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)  {
+  .image {
+    width: 100%;
+    padding: 20px 35px;
+
+  }
+  .text {
+    display: none;
+    height: 234px;
+  }
+
+  .container {
+    // margin: 0 10px;
+  }
+}
