@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title
+      | Vc
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+  -flash.each do |name, msg|
+    =content_tag :div, msg, class: name
+  ul.nav.navbar-nav
+    li= link_to "Pictures index", root_path
+    li= link_to 'Upload picture', new_picture_path
+  = yield
